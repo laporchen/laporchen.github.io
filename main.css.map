@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "D:/website/hugo_0.85.0_Windows-64bit/web-hugo/hugo_blog",
+	"sourceRoot": "/mnt/d/website/hugo_0.85.0_Windows-64bit/web-hugo/hugo_blog",
 	"sources": [
 		"themes/hello-friend-ng/assets/scss/main.scss",
 		"themes/hello-friend-ng/assets/scss/_normalize.scss",

@@ -6,8 +6,22 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 25 Jul 2021 21:05:39 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 27 Jul 2021 21:47:15 +0800</lastBuildDate>
         <atom:link href="https://laporchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>On Mac</title>
+            <link>https://laporchen.github.io/posts/on-mac/</link>
+            <pubDate>Tue, 27 Jul 2021 21:47:15 +0800</pubDate>
+            
+            <guid>https://laporchen.github.io/posts/on-mac/</guid>
+            <description>Got my Macbook air today. Now learning macOS. Also using this post to test my git configuration. :)</description>
+            <content type="html"><![CDATA[<p>Got my Macbook air today.
+Now learning macOS.
+Also using this post to test my git configuration.
+:)</p>
+]]></content>
+        </item>
         
         <item>
             <title>Boring</title>

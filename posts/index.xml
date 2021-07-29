@@ -6,8 +6,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 27 Jul 2021 21:47:15 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 29 Jul 2021 19:31:31 +0800</lastBuildDate>
         <atom:link href="https://laporchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Shortcode</title>
+            <link>https://laporchen.github.io/posts/shortcode/</link>
+            <pubDate>Thu, 29 Jul 2021 19:31:31 +0800</pubDate>
+            
+            <guid>https://laporchen.github.io/posts/shortcode/</guid>
+            <description>Learned to use shortcode today. Useful thing. Got my spotify playlists into this with shortcode :)
+ </description>
+            <content type="html"><![CDATA[<p>Learned to use shortcode today.
+Useful thing.
+Got my spotify playlists into this with shortcode :)</p>
+<iframe src="https://open.spotify.com/embed/track/3WtIXrla0ovC9MOIY78Vr8" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+]]></content>
+        </item>
         
         <item>
             <title>On Mac</title>

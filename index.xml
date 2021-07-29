@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 27 Jul 2021 21:47:15 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jul 2021 19:31:31 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shortcode</title>
+      <link>https://laporchen.github.io/posts/shortcode/</link>
+      <pubDate>Thu, 29 Jul 2021 19:31:31 +0800</pubDate>
+      
+      <guid>https://laporchen.github.io/posts/shortcode/</guid>
+      <description>Learned to use shortcode today. Useful thing. Got my spotify playlists into this with shortcode :)
+ </description>
+    </item>
+    
     <item>
       <title>On Mac</title>
       <link>https://laporchen.github.io/posts/on-mac/</link>
@@ -48,6 +58,15 @@ Pain.</description>
     </item>
     
     <item>
+      <title></title>
+      <link>https://laporchen.github.io/playlist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://laporchen.github.io/playlist/</guid>
+      <description>Music I love</description>
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>https://laporchen.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -57,7 +76,9 @@ Pain.</description>
 Major in CSIE at NTNU.
 I play guitar.
 I do random stuffs.
-Github Twitter</description>
+Social Links
+Github
+Twitter</description>
     </item>
     
   </channel>

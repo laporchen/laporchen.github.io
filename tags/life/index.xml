@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>life on Lapor Chen</title>
+    <link>https://laporchen.github.io/tags/life/</link>
+    <description>Recent content in life on Lapor Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lapor Chen</copyright>
+    <lastBuildDate>Tue, 27 Jul 2021 21:47:15 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/tags/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Mac</title>
+      <link>https://laporchen.github.io/posts/on-mac/</link>
+      <pubDate>Tue, 27 Jul 2021 21:47:15 +0800</pubDate>
+      
+      <guid>https://laporchen.github.io/posts/on-mac/</guid>
+      <description>Got my Macbook air today. Now learning macOS. Also using this post to test my git configuration. :)</description>
+    </item>
+    
+    <item>
+      <title>Boring</title>
+      <link>https://laporchen.github.io/posts/boring/</link>
+      <pubDate>Sun, 25 Jul 2021 21:05:39 +0800</pubDate>
+      
+      <guid>https://laporchen.github.io/posts/boring/</guid>
+      <description>Feel so boring in this pandemic quarantine.
+Working with competitive programming in the summer vaction. It&amp;rsquo;s really hard. And I got bamboozled by Windows.
+Newline in Windows would make a &amp;lsquo;\r&amp;rsquo; in the end in the input buffer while Linux only put a &amp;lsquo;\n&amp;rsquo; in the end. This gave me a lot of problems while I&amp;rsquo;m testing code with file input.
+Pain.</description>
+    </item>
+    
+  </channel>
+</rss>

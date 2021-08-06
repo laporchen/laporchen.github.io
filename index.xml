@@ -7,7 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Lapor Chen</copyright>
-    <lastBuildDate>Thu, 29 Jul 2021 19:31:31 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Aug 2021 00:08:15 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DcBot</title>
+      <link>https://laporchen.github.io/posts/dcbot/</link>
+      <pubDate>Sat, 07 Aug 2021 00:08:15 +0800</pubDate>
+      
+      <guid>https://laporchen.github.io/posts/dcbot/</guid>
+      <description>Making a discord bot cus I&amp;rsquo;m kinda boring and want to do something about coding.
+I also want to make something actually useful in life.
+But I have no idea what to do.
+Maybe make the bot actually do something useful?
+Now it just doing stupid reactions.
+ </description>
+    </item>
+    
+    <item>
+      <title>EditTheme</title>
+      <link>https://laporchen.github.io/posts/edittheme/</link>
+      <pubDate>Sat, 07 Aug 2021 00:05:20 +0800</pubDate>
+      
+      <guid>https://laporchen.github.io/posts/edittheme/</guid>
+      <description>Changing the color of the Theme.
+I don&amp;rsquo;t want to have a blog looks like my friend&amp;rsquo;s one.
+So I changed it to purple :)</description>
+    </item>
+    
     <item>
       <title>Shortcode</title>
       <link>https://laporchen.github.io/posts/shortcode/</link>
@@ -76,7 +101,7 @@ Pain.</description>
 Major in CSIE at NTNU.
 I play guitar.
 I do random stuffs.
-Social Links
+ Social Links
 Github
 Twitter</description>
     </item>

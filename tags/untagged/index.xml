@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>untagged on Lapor Chen</title>
+    <link>https://laporchen.github.io/tags/untagged/</link>
+    <description>Recent content in untagged on Lapor Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lapor Chen</copyright>
+    <lastBuildDate>Thu, 27 Jan 2022 19:46:49 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022</title>
+      <link>https://laporchen.github.io/posts/2022/</link>
+      <pubDate>Thu, 27 Jan 2022 19:46:49 +0800</pubDate>
+      
+      <guid>https://laporchen.github.io/posts/2022/</guid>
+      <description>Didn&amp;rsquo;t update my blog for a long time because lazy. Solving leetcode and develop some simple frontend stuff recently. Thought about moving from vscode to vim, but and end up staying in vscode with vim keybinding. vim binding is really fast. Going to learn login validation or some stuff about backend now.
+Also, using lofi music as background music is great. And here&amp;rsquo;s a song I love recently.
+ </description>
+    </item>
+    
+  </channel>
+</rss>

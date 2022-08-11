@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="I&amp;rsquo;ll try to write solutions I came up during the contests. To improve my ability to explain things to others. 現在leetcode每周競賽完來試著寫有解出來的題目的作法，不然我真的不太會跟別人說明我的思路。
+Q1 Number of Arithmetic Triplets Thoughts : Brute-force
+We are looking for i&amp;lt;j&amp;lt;k ,nums[j] - nums[i] == diff and nums[k] - nums[j] == diff We just iterate through the array for index j, and an inner loop for index i. If nums[j] - nums[i] == diff, then we can check if the number nums[j] &#43; diff exists." />
+<meta name="keywords" content=", untagged" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://laporchen.github.io/posts/leetcode-contest-305-writeup/" />
+
+
+    <title>
+        
+            Leetcode Weekly Contest 305 writeup :: Lapor Chen  — Hey.
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.cd525bd0a89ede7290f18b88bee7293e7f3450f6c774573aab039348370f2601.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Leetcode Weekly Contest 305 writeup">
+<meta itemprop="description" content="I&rsquo;ll try to write solutions I came up during the contests. To improve my ability to explain things to others. 現在leetcode每周競賽完來試著寫有解出來的題目的作法，不然我真的不太會跟別人說明我的思路。
+Q1 Number of Arithmetic Triplets Thoughts : Brute-force
+We are looking for i&lt;j&lt;k ,nums[j] - nums[i] == diff and nums[k] - nums[j] == diff We just iterate through the array for index j, and an inner loop for index i. If nums[j] - nums[i] == diff, then we can check if the number nums[j] &#43; diff exists."><meta itemprop="datePublished" content="2022-08-10T09:43:09+08:00" />
+<meta itemprop="dateModified" content="2022-08-10T09:43:09+08:00" />
+<meta itemprop="wordCount" content="616"><meta itemprop="image" content="https://laporchen.github.io/"/>
+<meta itemprop="keywords" content="untagged," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://laporchen.github.io/"/>
+
+<meta name="twitter:title" content="Leetcode Weekly Contest 305 writeup"/>
+<meta name="twitter:description" content="I&rsquo;ll try to write solutions I came up during the contests. To improve my ability to explain things to others. 現在leetcode每周競賽完來試著寫有解出來的題目的作法，不然我真的不太會跟別人說明我的思路。
+Q1 Number of Arithmetic Triplets Thoughts : Brute-force
+We are looking for i&lt;j&lt;k ,nums[j] - nums[i] == diff and nums[k] - nums[j] == diff We just iterate through the array for index j, and an inner loop for index i. If nums[j] - nums[i] == diff, then we can check if the number nums[j] &#43; diff exists."/>
+
+
+
+
+    <meta property="og:title" content="Leetcode Weekly Contest 305 writeup" />
+<meta property="og:description" content="I&rsquo;ll try to write solutions I came up during the contests. To improve my ability to explain things to others. 現在leetcode每周競賽完來試著寫有解出來的題目的作法，不然我真的不太會跟別人說明我的思路。
+Q1 Number of Arithmetic Triplets Thoughts : Brute-force
+We are looking for i&lt;j&lt;k ,nums[j] - nums[i] == diff and nums[k] - nums[j] == diff We just iterate through the array for index j, and an inner loop for index i. If nums[j] - nums[i] == diff, then we can check if the number nums[j] &#43; diff exists." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laporchen.github.io/posts/leetcode-contest-305-writeup/" /><meta property="og:image" content="https://laporchen.github.io/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-10T09:43:09+08:00" />
+<meta property="article:modified_time" content="2022-08-10T09:43:09+08:00" /><meta property="og:site_name" content="Lapor Chen" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-08-10 09:43:09 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">% ~</span>
+            <span class="logo__text">Lapor&#39;s Empty Brain</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#C586FF;
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About Me</a></li><li><a href="/posts">Blog</a></li><li><a href="/playlist">Music</a></li><li><a href="https://github.com/laporchen/">Github</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        3 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://laporchen.github.io/posts/leetcode-contest-305-writeup/">Leetcode Weekly Contest 305 writeup</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>I&rsquo;ll try to write solutions I came up during the contests. To improve my ability to explain things to others.
+現在leetcode每周競賽完來試著寫有解出來的題目的作法，不然我真的不太會跟別人說明我的思路。</p>
+<h2 id="q1-number-of-arithmetic-tripletshttpsleetcodecomproblemsnumber-of-arithmetic-triplets"><a href="https://leetcode.com/problems/number-of-arithmetic-triplets/">Q1 Number of Arithmetic Triplets</a></h2>
+<p><strong>Thoughts : Brute-force</strong></p>
+<p>We are looking for <code>i&lt;j&lt;k</code> ,<code>nums[j] - nums[i] == diff</code> and <code>nums[k] - nums[j] == diff</code>
+We just iterate through the array for index j, and an inner loop for index i.
+If <code>nums[j] - nums[i] == diff</code>, then we can check if the number <code>nums[j] + diff</code> exists. If it exist then we found a triplet.
+We don&rsquo;t have to check the index k since the array is strictly increasing.
+Make sure the index does not go out of range.
+<strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int arithmeticTriplets(vector&lt;int&gt;&amp; nums, int diff) {
+        bool exist[205] = {0};
+        int n = nums.size();
+        for(int &amp;v:nums) {
+            exist[v] = 1;
+        }
+        int res = 0;
+        for(int i = 0;i&lt;n;++i) {
+            for(int j = i+1;j&lt;n;++j) {
+                if(nums[j] - nums[i] &lt;= nums[n-1] &amp;&amp; nums[j] - nums[i] == diff) {
+                    if(nums[j] + diff &lt;= 200 &amp;&amp; exist[nums[j] + diff]) {
+                        ++res;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+};
+</code></pre><h2 id="q2-reachable-nodes-with-restrictionshttpsleetcodecomproblemsreachable-nodes-with-restrictions"><a href="https://leetcode.com/problems/reachable-nodes-with-restrictions/">Q2 Reachable Nodes With Restrictions</a></h2>
+<p><strong>Thoughts : BFS</strong>
+The problem asks for the maximum nodes we can reach from 0 without touching the restricted nodes. Since it is a tree, so the restricted is just ignore every restricted nodes and their child nodes.
+A breadth-first search over the tree can find the answer. Use a set to check if the current node is restricted. Only add unrestriced nodes to the queue.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    set&lt;int&gt; no;
+    vector&lt;int&gt; adjs[100005];
+    int reachableNodes(int n, vector&lt;vector&lt;int&gt;&gt;&amp; edges, vector&lt;int&gt;&amp; restricted) {
+        for(int &amp;v:restricted) no.insert(v);
+        for(auto &amp;e:edges) {
+            adjs[e[0]].push_back(e[1]);
+            adjs[e[1]].push_back(e[0]);
+        }
+        int vis[100005] = {0};
+        queue&lt;int&gt; q;
+        q.push(0);
+        int res = 0;
+        while(q.size()) {
+            int n = q.size();
+            while(n--) {
+                auto f = q.front();q.pop();
+                if(vis[f]) continue;
+                vis[f] = true;
+                ++res;
+                for(auto adj:adjs[f]) {
+                    if(no.count(adj)) {
+                        continue;
+                    }
+                    
+                    q.push(adj);
+                }
+            }
+        }
+        return res;
+    }
+};
+</code></pre><h2 id="q3-check-if-there-is-a-valid-partition-for-the-arrayhttpsleetcodecomproblemscheck-if-there-is-a-valid-partition-for-the-array"><a href="https://leetcode.com/problems/check-if-there-is-a-valid-partition-for-the-array/">Q3 Check if There is a Valid Partition For The Array</a></h2>
+<p><strong>Thoughts : DP</strong>
+We prepare an array <code>part</code> to memorize the state of the of the dp.
+The value of <code>part[i]</code> means if we can make a valid partition from 0 to i-1.
+if we can make a valid partition for the subarray until current index. Then we can check the the three condition starts from the current index.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    bool validPartition(vector&lt;int&gt;&amp; nums) {
+        bool part[100005] = {0};
+        int n = nums.size();
+        nums.push_back(-1);
+        nums.push_back(-1);
+        part[0] = true;
+        int cnt = 1;
+        bool inc = true;
+        bool prev = -1;
+        for(int i = 0;i&lt;n;++i) {
+            if(part[i] &amp;&amp; nums[i] == nums[i+1]) {
+                part[i+2] = true;
+            }
+            if(part[i] &amp;&amp; nums[i+1] == nums[i] &amp;&amp; nums[i+2] == nums[i]) {
+                part[i+3] = true;
+            }
+            if(part[i] &amp;&amp; nums[i] + 1 == nums[i+1] &amp;&amp; nums[i] + 2 == nums[i+2]) {
+                part[i+3] = true;
+            }
+        }
+
+        return part[n];
+    }
+};
+</code></pre><h2 id="q4-longest-ideal-subsequencehttpsleetcodecomproblemslongest-ideal-subsequence"><a href="https://leetcode.com/problems/longest-ideal-subsequence/">Q4 Longest Ideal Subsequence</a></h2>
+<p><strong>Thoughts : LIS variation</strong>
+You can check <a href="https://web.ntnu.edu.tw/~algo/Subsequence.html">here</a> if you are not familiar with LIS.
+We only have <code>a ~ z</code> for our characters. So we can update the subsequence ends with <code>s[i]</code> with subsequences ends in <code>(s[i] - k) ~ (s[i] + k)</code>, we do at most 26 updates in every iteration.
+Time complexity is O(26 * N)</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int longestIdealString(string s, int k) {
+        int n = s.size();
+        int len[26] = {0};
+        for(int i = 0;i&lt;n;++i) {
+            int c = s[i] - 'a';
+            ++len[c];
+            for(int j = max(0,c-k); j &lt;= min(25,c+k);++j) {
+                if(c == j) continue;
+                len[c] = max(len[c],len[j] + 1);
+            }
+            
+        }
+        int res = 0;
+        for(int i = 0;i&lt;26;++i) {
+            res = max(res,len[i]);
+        }
+        return res;
+    }
+};
+</code></pre>
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://laporchen.github.io/tags/untagged/">untagged</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        616 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2022-08-10 09:43
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+
+
+
+    </body>
+</html>

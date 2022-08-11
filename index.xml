@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Lapor Chen</copyright>
-    <lastBuildDate>Thu, 27 Jan 2022 19:46:49 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Aug 2022 09:43:09 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode Weekly Contest 305 writeup</title>
+      <link>https://laporchen.github.io/posts/leetcode-contest-305-writeup/</link>
+      <pubDate>Wed, 10 Aug 2022 09:43:09 +0800</pubDate>
+      
+      <guid>https://laporchen.github.io/posts/leetcode-contest-305-writeup/</guid>
+      <description>I&amp;rsquo;ll try to write solutions I came up during the contests. To improve my ability to explain things to others. 現在leetcode每周競賽完來試著寫有解出來的題目的作法，不然我真的不太會跟別人說明我的思路。
+Q1 Number of Arithmetic Triplets Thoughts : Brute-force
+We are looking for i&amp;lt;j&amp;lt;k ,nums[j] - nums[i] == diff and nums[k] - nums[j] == diff We just iterate through the array for index j, and an inner loop for index i. If nums[j] - nums[i] == diff, then we can check if the number nums[j] + diff exists.</description>
+    </item>
+    
     <item>
       <title>2022</title>
       <link>https://laporchen.github.io/posts/2022/</link>

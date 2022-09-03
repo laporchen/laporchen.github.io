@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Leetcode Biweekly Contest 86 Did today&amp;rsquo;s biweely contest in around 40 minutes. Todays&amp;rsquo;s problems are really weird.
+Q1 Find Subarrays With Equal Sum Thoughts : Brute-force
+We only looking for subarray of length two. So we just iterate through the entire array and insert the sum into a set. If the value is already in the set means we have to subarray with equal sum.
+I misunderstood the problem during the contest." />
+<meta name="keywords" content=", leetcode, solution" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://laporchen.github.io/posts/leetcode-biweekly-contest-86/" />
+
+
+    <title>
+        
+            Leetcode Biweekly Contest 86 :: Lapor Chen  — Hey.
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.cd525bd0a89ede7290f18b88bee7293e7f3450f6c774573aab039348370f2601.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Leetcode Biweekly Contest 86">
+<meta itemprop="description" content="Leetcode Biweekly Contest 86 Did today&rsquo;s biweely contest in around 40 minutes. Todays&rsquo;s problems are really weird.
+Q1 Find Subarrays With Equal Sum Thoughts : Brute-force
+We only looking for subarray of length two. So we just iterate through the entire array and insert the sum into a set. If the value is already in the set means we have to subarray with equal sum.
+I misunderstood the problem during the contest."><meta itemprop="datePublished" content="2022-09-04T00:09:17+08:00" />
+<meta itemprop="dateModified" content="2022-09-04T00:09:17+08:00" />
+<meta itemprop="wordCount" content="496"><meta itemprop="image" content="https://laporchen.github.io/"/>
+<meta itemprop="keywords" content="leetcode,solution," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://laporchen.github.io/"/>
+
+<meta name="twitter:title" content="Leetcode Biweekly Contest 86"/>
+<meta name="twitter:description" content="Leetcode Biweekly Contest 86 Did today&rsquo;s biweely contest in around 40 minutes. Todays&rsquo;s problems are really weird.
+Q1 Find Subarrays With Equal Sum Thoughts : Brute-force
+We only looking for subarray of length two. So we just iterate through the entire array and insert the sum into a set. If the value is already in the set means we have to subarray with equal sum.
+I misunderstood the problem during the contest."/>
+
+
+
+
+    <meta property="og:title" content="Leetcode Biweekly Contest 86" />
+<meta property="og:description" content="Leetcode Biweekly Contest 86 Did today&rsquo;s biweely contest in around 40 minutes. Todays&rsquo;s problems are really weird.
+Q1 Find Subarrays With Equal Sum Thoughts : Brute-force
+We only looking for subarray of length two. So we just iterate through the entire array and insert the sum into a set. If the value is already in the set means we have to subarray with equal sum.
+I misunderstood the problem during the contest." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laporchen.github.io/posts/leetcode-biweekly-contest-86/" /><meta property="og:image" content="https://laporchen.github.io/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-04T00:09:17+08:00" />
+<meta property="article:modified_time" content="2022-09-04T00:09:17+08:00" /><meta property="og:site_name" content="Lapor Chen" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-09-04 00:09:17 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">% ~</span>
+            <span class="logo__text">Lapor&#39;s Empty Brain</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#C586FF;
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About Me</a></li><li><a href="/posts">Blog</a></li><li><a href="/playlist">Music</a></li><li><a href="https://github.com/laporchen/">Github</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        3 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://laporchen.github.io/posts/leetcode-biweekly-contest-86/">Leetcode Biweekly Contest 86</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h1 id="leetcode-biweekly-contest-86">Leetcode Biweekly Contest 86</h1>
+<p>Did today&rsquo;s biweely contest in around 40 minutes. Todays&rsquo;s problems are really weird.</p>
+<h2 id="q1-find-subarrays-with-equal-sumhttpsleetcodecomproblemsfind-subarrays-with-equal-sum"><a href="https://leetcode.com/problems/find-subarrays-with-equal-sum/">Q1 Find Subarrays With Equal Sum</a></h2>
+<p><strong>Thoughts : Brute-force</strong></p>
+<p>We only looking for subarray of length two.
+So we just iterate through the entire array and insert the sum into a set. If the value is already in the set means we have to subarray with equal sum.</p>
+<p>I misunderstood the problem during the contest. Took 9 minutes to do this one. Jeez.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    bool findSubarrays(vector&lt;int&gt;&amp; nums) {
+        unordered_set&lt;int&gt; st;
+        int cur = 0;
+        for(int i = 0;i&lt;nums.size() - 1;++i) {
+            if(st.count(nums[i] + nums[i+1])) return true;
+            st.insert(nums[i]+nums[i+1]);
+        }
+        return false;
+    }
+};
+</code></pre><h2 id="q2-strictly-palindromic-numberhttpsleetcodecomproblemsstrictly-palindromic-number"><a href="https://leetcode.com/problems/strictly-palindromic-number/">Q2 Strictly Palindromic Number</a></h2>
+<p><strong>Thoughts : IDK</strong></p>
+<p>I really don&rsquo;t have a good explaination for this one. I took a wild guess and just return false.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    bool isStrictlyPalindromic(int n) {
+        return false;
+    }
+};
+</code></pre><h2 id="q3-maximum-rows-covered-by-columnshttpsleetcodecomproblemsmaximum-rows-covered-by-columns"><a href="https://leetcode.com/problems/maximum-rows-covered-by-columns/">Q3 Maximum Rows Covered by Columns</a></h2>
+<p><strong>Thoughts : Brute-force,bitwise</strong>
+The row is covered when all the 1 in this row is in the selected columns, which means row with 1 in those unselected columns is not covered. So we check all the combinations for unselected columns and count the number of uncover rows in these column. We will get the answer by minimize this value.</p>
+<p>The code is spaghetti cus my brain was jammed.
+<strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int maximumRows(vector&lt;vector&lt;int&gt;&gt;&amp; mat, int cols) {
+        if(cols == mat[0].size()) return mat.size();
+        int n = mat.size();
+        int m = mat[0].size();
+        cols = m - cols;
+        int res = n;
+        for(int i = 0;i &lt; (1 &lt;&lt; m);++i) {
+            int cnt = 0;
+            for(int j = 0;j&lt;m;++j) {
+                if(i &amp; (1&lt;&lt;j))++cnt;
+            }
+            if(cnt == cols) {
+                set&lt;int&gt; st;
+                //cout &lt;&lt; i &lt;&lt;endl;
+                for(int j = 0;j&lt;m;++j) {
+                    if(i &amp; (1&lt;&lt;j)) {
+                        //cout &lt;&lt; &quot;j = &quot; &lt;&lt; j&lt;&lt;endl; 
+                        for(int k = 0;k&lt;n;++k) {
+                            if(mat[k][j] == 1) {
+                                st.insert(k);
+                            }
+                        }
+                    }
+                }
+                res = min((int)st.size(),res);
+        
+            }
+        }
+        return n - res;
+        
+    }
+};
+</code></pre><h2 id="q4-maximum-number-of-robots-within-budgethttpsleetcodecomproblemsmaximum-number-of-robots-within-budget"><a href="https://leetcode.com/problems/maximum-number-of-robots-within-budget/">Q4 Maximum Number of Robots Within Budget</a></h2>
+<p><strong>Thoughts : Greedy, Sliding window</strong></p>
+<p>We can iterate through the robots and add all of them into the selection. If adding the current robot will blow the budget. Then we remove the front robots until the selection is empty or the budget is enough for current robot. The answer is the maxinum number of selection during this loop.
+I use a multiset to record the current maximum chargeTime.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int maximumRobots(vector&lt;int&gt;&amp; chargeTimes, vector&lt;int&gt;&amp; runningCosts, long long budget) {
+        multiset&lt;int&gt; st;
+        int n = chargeTimes.size();
+        int cnt = 0;
+        long long runSum = 0;
+        int res = 0;
+        for(int i = 0;i&lt;n;++i) {
+            while(cnt &amp;&amp; (runSum + runningCosts[i])* (cnt+1) + max(*st.rbegin(),chargeTimes[i]) &gt; budget) {
+                runSum -= runningCosts[i - cnt];
+                st.erase(st.find(chargeTimes[i-cnt]));
+                --cnt;
+            }
+            if(!cnt &amp;&amp; (runSum + runningCosts[i])* (cnt+1) + chargeTimes[i] &gt; budget) continue;
+            runSum += runningCosts[i];
+            st.insert(chargeTimes[i]);
+            ++cnt;
+            res = max(res,cnt);
+        }
+        return res;
+    }
+};
+</code></pre>
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://laporchen.github.io/tags/leetcode/">leetcode</a></span>
+        <span class="tag"><a href="https://laporchen.github.io/tags/solution/">solution</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        496 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2022-09-04 00:09
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+
+
+
+    </body>
+</html>

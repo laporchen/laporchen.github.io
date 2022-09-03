@@ -6,8 +6,118 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Lapor Chen</copyright>
-        <lastBuildDate>Wed, 10 Aug 2022 09:43:09 +0800</lastBuildDate>
+        <lastBuildDate>Sun, 04 Sep 2022 00:09:17 +0800</lastBuildDate>
         <atom:link href="https://laporchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Leetcode Biweekly Contest 86</title>
+            <link>https://laporchen.github.io/posts/leetcode-biweekly-contest-86/</link>
+            <pubDate>Sun, 04 Sep 2022 00:09:17 +0800</pubDate>
+            
+            <guid>https://laporchen.github.io/posts/leetcode-biweekly-contest-86/</guid>
+            <description>Leetcode Biweekly Contest 86 Did today&amp;rsquo;s biweely contest in around 40 minutes. Todays&amp;rsquo;s problems are really weird.
+Q1 Find Subarrays With Equal Sum Thoughts : Brute-force
+We only looking for subarray of length two. So we just iterate through the entire array and insert the sum into a set. If the value is already in the set means we have to subarray with equal sum.
+I misunderstood the problem during the contest.</description>
+            <content type="html"><![CDATA[<h1 id="leetcode-biweekly-contest-86">Leetcode Biweekly Contest 86</h1>
+<p>Did today&rsquo;s biweely contest in around 40 minutes. Todays&rsquo;s problems are really weird.</p>
+<h2 id="q1-find-subarrays-with-equal-sumhttpsleetcodecomproblemsfind-subarrays-with-equal-sum"><a href="https://leetcode.com/problems/find-subarrays-with-equal-sum/">Q1 Find Subarrays With Equal Sum</a></h2>
+<p><strong>Thoughts : Brute-force</strong></p>
+<p>We only looking for subarray of length two.
+So we just iterate through the entire array and insert the sum into a set. If the value is already in the set means we have to subarray with equal sum.</p>
+<p>I misunderstood the problem during the contest. Took 9 minutes to do this one. Jeez.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    bool findSubarrays(vector&lt;int&gt;&amp; nums) {
+        unordered_set&lt;int&gt; st;
+        int cur = 0;
+        for(int i = 0;i&lt;nums.size() - 1;++i) {
+            if(st.count(nums[i] + nums[i+1])) return true;
+            st.insert(nums[i]+nums[i+1]);
+        }
+        return false;
+    }
+};
+</code></pre><h2 id="q2-strictly-palindromic-numberhttpsleetcodecomproblemsstrictly-palindromic-number"><a href="https://leetcode.com/problems/strictly-palindromic-number/">Q2 Strictly Palindromic Number</a></h2>
+<p><strong>Thoughts : IDK</strong></p>
+<p>I really don&rsquo;t have a good explaination for this one. I took a wild guess and just return false.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    bool isStrictlyPalindromic(int n) {
+        return false;
+    }
+};
+</code></pre><h2 id="q3-maximum-rows-covered-by-columnshttpsleetcodecomproblemsmaximum-rows-covered-by-columns"><a href="https://leetcode.com/problems/maximum-rows-covered-by-columns/">Q3 Maximum Rows Covered by Columns</a></h2>
+<p><strong>Thoughts : Brute-force,bitwise</strong>
+The row is covered when all the 1 in this row is in the selected columns, which means row with 1 in those unselected columns is not covered. So we check all the combinations for unselected columns and count the number of uncover rows in these column. We will get the answer by minimize this value.</p>
+<p>The code is spaghetti cus my brain was jammed.
+<strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int maximumRows(vector&lt;vector&lt;int&gt;&gt;&amp; mat, int cols) {
+        if(cols == mat[0].size()) return mat.size();
+        int n = mat.size();
+        int m = mat[0].size();
+        cols = m - cols;
+        int res = n;
+        for(int i = 0;i &lt; (1 &lt;&lt; m);++i) {
+            int cnt = 0;
+            for(int j = 0;j&lt;m;++j) {
+                if(i &amp; (1&lt;&lt;j))++cnt;
+            }
+            if(cnt == cols) {
+                set&lt;int&gt; st;
+                //cout &lt;&lt; i &lt;&lt;endl;
+                for(int j = 0;j&lt;m;++j) {
+                    if(i &amp; (1&lt;&lt;j)) {
+                        //cout &lt;&lt; &quot;j = &quot; &lt;&lt; j&lt;&lt;endl; 
+                        for(int k = 0;k&lt;n;++k) {
+                            if(mat[k][j] == 1) {
+                                st.insert(k);
+                            }
+                        }
+                    }
+                }
+                res = min((int)st.size(),res);
+        
+            }
+        }
+        return n - res;
+        
+    }
+};
+</code></pre><h2 id="q4-maximum-number-of-robots-within-budgethttpsleetcodecomproblemsmaximum-number-of-robots-within-budget"><a href="https://leetcode.com/problems/maximum-number-of-robots-within-budget/">Q4 Maximum Number of Robots Within Budget</a></h2>
+<p><strong>Thoughts : Greedy, Sliding window</strong></p>
+<p>We can iterate through the robots and add all of them into the selection. If adding the current robot will blow the budget. Then we remove the front robots until the selection is empty or the budget is enough for current robot. The answer is the maxinum number of selection during this loop.
+I use a multiset to record the current maximum chargeTime.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int maximumRobots(vector&lt;int&gt;&amp; chargeTimes, vector&lt;int&gt;&amp; runningCosts, long long budget) {
+        multiset&lt;int&gt; st;
+        int n = chargeTimes.size();
+        int cnt = 0;
+        long long runSum = 0;
+        int res = 0;
+        for(int i = 0;i&lt;n;++i) {
+            while(cnt &amp;&amp; (runSum + runningCosts[i])* (cnt+1) + max(*st.rbegin(),chargeTimes[i]) &gt; budget) {
+                runSum -= runningCosts[i - cnt];
+                st.erase(st.find(chargeTimes[i-cnt]));
+                --cnt;
+            }
+            if(!cnt &amp;&amp; (runSum + runningCosts[i])* (cnt+1) + chargeTimes[i] &gt; budget) continue;
+            runSum += runningCosts[i];
+            st.insert(chargeTimes[i]);
+            ++cnt;
+            res = max(res,cnt);
+        }
+        return res;
+    }
+};
+</code></pre>]]></content>
+        </item>
         
         <item>
             <title>Leetcode Weekly Contest 305 writeup</title>

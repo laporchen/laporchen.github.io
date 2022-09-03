@@ -9,15 +9,15 @@
     <copyright>Lapor Chen</copyright>
     <lastBuildDate>Sun, 04 Sep 2022 00:09:17 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/tags/solution/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Leetcode Biweekly Contest 86</title>
+      <title>Leetcode Biweekly Contest 86 writeup</title>
       <link>https://laporchen.github.io/posts/leetcode-biweekly-contest-86/</link>
       <pubDate>Sun, 04 Sep 2022 00:09:17 +0800</pubDate>
       
       <guid>https://laporchen.github.io/posts/leetcode-biweekly-contest-86/</guid>
-      <description>Leetcode Biweekly Contest 86 Did today&amp;rsquo;s biweely contest in around 40 minutes. Todays&amp;rsquo;s problems are really weird.
+      <description>Did today&amp;rsquo;s biweely contest in around 40 minutes. Todays&amp;rsquo;s problems are really weird.
 Q1 Find Subarrays With Equal Sum Thoughts : Brute-force
 We only looking for subarray of length two. So we just iterate through the entire array and insert the sum into a set. If the value is already in the set means we have to subarray with equal sum.
-I misunderstood the problem during the contest.</description>
+I misunderstood the problem during the contest. Took 9 minutes to do this one.</description>
     </item>
     
   </channel>

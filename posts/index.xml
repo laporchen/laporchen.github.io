@@ -41,6 +41,7 @@ public:
 </code></pre><h2 id="q2-strictly-palindromic-numberhttpsleetcodecomproblemsstrictly-palindromic-number"><a href="https://leetcode.com/problems/strictly-palindromic-number/">Q2 Strictly Palindromic Number</a></h2>
 <p><strong>Thoughts : IDK</strong></p>
 <p>I really don&rsquo;t have a good explaination for this one. I took a wild guess and just return false.</p>
+<p><strong>Update</strong> : The reason is that for any number n greater than 4, n base n-2 will always be 12(base n-2).</p>
 <p><strong>Solution during contest</strong></p>
 <pre><code class="language-cpp=" data-lang="cpp=">class Solution {
 public:
@@ -51,8 +52,8 @@ public:
 </code></pre><h2 id="q3-maximum-rows-covered-by-columnshttpsleetcodecomproblemsmaximum-rows-covered-by-columns"><a href="https://leetcode.com/problems/maximum-rows-covered-by-columns/">Q3 Maximum Rows Covered by Columns</a></h2>
 <p><strong>Thoughts : Brute-force,bitwise</strong>
 The row is covered when all the 1 in this row is in the selected columns, which means row with 1 in those unselected columns is not covered. So we check all the combinations for unselected columns and count the number of uncover rows in these column. We will get the answer by minimize this value.</p>
-<p>The code is spaghetti cus my brain was jammed.
-<strong>Solution during contest</strong></p>
+<p>The code is spaghetti cus my brain was jammed.</p>
+<p><strong>Solution during contest</strong></p>
 <pre><code class="language-cpp=" data-lang="cpp=">class Solution {
 public:
     int maximumRows(vector&lt;vector&lt;int&gt;&gt;&amp; mat, int cols) {

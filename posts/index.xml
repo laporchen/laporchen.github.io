@@ -6,8 +6,147 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Lapor Chen</copyright>
-        <lastBuildDate>Sun, 04 Sep 2022 00:09:17 +0800</lastBuildDate>
+        <lastBuildDate>Mon, 19 Sep 2022 01:05:42 +0800</lastBuildDate>
         <atom:link href="https://laporchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Leetcode Weekly Contest 311 writeup</title>
+            <link>https://laporchen.github.io/posts/leetcode-weekly-contest-311/</link>
+            <pubDate>Mon, 19 Sep 2022 01:05:42 +0800</pubDate>
+            
+            <guid>https://laporchen.github.io/posts/leetcode-weekly-contest-311/</guid>
+            <description>Leetcode Weekly Contest 311 writeup Didn&amp;rsquo;t participate in this one. But tried virtual contest.
+Q1 Smallest Even Multiple Thoughts : Logic Basically asking for LCM(n,2) Solution during contest
+class Solution { public: int smallestEvenMultiple(int n) { return n&amp;amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be.</description>
+            <content type="html"><![CDATA[<h1 id="leetcode-weekly-contest-311-writeup">Leetcode Weekly Contest 311 writeup</h1>
+<p>Didn&rsquo;t participate in this one. But tried virtual contest.</p>
+<h2 id="q1-smallest-even-multiplehttpsleetcodecomproblemssmallest-even-multiple"><a href="https://leetcode.com/problems/smallest-even-multiple/">Q1 Smallest Even Multiple</a></h2>
+<p><strong>Thoughts : Logic</strong>
+Basically asking for LCM(n,2)
+<strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int smallestEvenMultiple(int n) {
+        return n&amp;1 ? n * 2 : n;
+    }
+};
+</code></pre><h2 id="q2-length-of-the-longest-alphabetical-continuous-substringhttpsleetcodecomproblemslength-of-the-longest-alphabetical-continuous-substring"><a href="https://leetcode.com/problems/length-of-the-longest-alphabetical-continuous-substring/">Q2 Length of the Longest Alphabetical Continuous Substring</a></h2>
+<p><strong>Thoughts : Greedy</strong>
+We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be. If the current one is not the expecting letter. We change the beginning to this one and continue check the rest of the string. Otherwise, we increase the length and check next letter.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int longestContinuousSubstring(string s) {
+        int cur = 1;
+        int res = 1;
+
+        for(int i = 1;i&lt;s.size();++i) {
+            if(s[i] == s[i-1] + 1) {
+                ++cur;
+                res = max(res,cur);
+            }
+            else {
+                cur = 1;
+            }
+            if(res == 26) return res;
+        }
+        return res;
+    }
+};
+</code></pre><h2 id="q3-reverse-odd-levels-of-binary-treehttpsleetcodecomproblemsreverse-odd-levels-of-binary-tree"><a href="https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/">Q3 Reverse Odd Levels of Binary Tree</a></h2>
+<p><strong>Thoughts : BFS</strong>
+We want to reverse the odd levels. We keep a number that tracking the current level. If the level is odd. We pop everything out of the queue and reverse the values. The rest of it is just basic BFS.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    TreeNode* reverseOddLevels(TreeNode* root) {
+        queue&lt;TreeNode*&gt; q;
+        q.push(root);
+        int l = 0;
+        while(!q.empty()) {
+            int n = q.size();
+            if(l &amp; 1) {
+                vector&lt;TreeNode*&gt; v(n);
+                while(n--) {
+                    auto f = q.front();q.pop();
+                    v[n] = f;
+                    if(f-&gt;left) q.push(f-&gt;left);
+                    if(f-&gt;right)q.push(f-&gt;right);
+                }
+                int li = 0,ri = v.size()-1;
+                while(li &lt; ri) {
+                    int tmp = v[li]-&gt;val;
+                    v[li]-&gt;val = v[ri]-&gt;val;
+                    v[ri]-&gt;val = tmp;
+                    ++li;
+                    --ri;
+                }
+            }
+            else {
+                while(n--) {
+                    auto f = q.front();q.pop();
+                    if(f-&gt;left) q.push(f-&gt;left);
+                    if(f-&gt;right) q.push(f-&gt;right);
+                }
+            }
+            ++l;
+        }
+        
+        return root;
+    }
+};
+</code></pre><h2 id="q4-sum-of-prefix-scores-of-stringshttpsleetcodecomproblemssum-of-prefix-scores-of-strings"><a href="https://leetcode.com/problems/sum-of-prefix-scores-of-strings/">Q4 Sum of Prefix Scores of Strings</a></h2>
+<p><strong>Thoughts : Trie</strong>
+For every string, the score of it is the sum of all prefix string include itself. When we insert a word into trie. Add one score for each node in the path. After every word is added. We can calculate the score for each word by add all the score in the search path.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Node {
+public:
+    Node* next[26];
+    int val = 0;
+    Node() = default;
+};
+class Solution {
+public:
+    Node* root = new Node();
+    void insert(string &amp;s) {
+        int n = s.size();
+        auto cur = root;
+        for(int i = 0;i&lt;n;++i) {
+            int c = s[i] - 'a';
+            if(cur-&gt;next[c] == nullptr) {
+                cur-&gt;next[c] = new Node();
+            }
+            cur-&gt;next[c]-&gt;val++;
+            cur = cur-&gt;next[c];
+        }
+    }
+    int sum(string &amp;s) {
+        int n = s.size();
+        int res = 0;
+        auto cur = root;
+        for(int i = 0;i&lt;n;++i) {
+            int c = s[i] - 'a';
+            res += cur-&gt;next[c]-&gt;val;
+            cur = cur-&gt;next[c];
+        }
+        return res;
+    }
+    vector&lt;int&gt; sumPrefixScores(vector&lt;string&gt;&amp; words) {
+        int n = words.size();
+        unordered_map&lt;string,int&gt; mp;
+        vector&lt;int&gt; res(n,0);
+        for(int i = 0;i&lt;n;++i) {
+            insert(words[i]);
+        }
+        for(int i = 0;i&lt;n;++i) {
+            string &amp;s = words[i];
+            res[i] = sum(s);
+        }
+        return res;
+    }
+};
+</code></pre>]]></content>
+        </item>
         
         <item>
             <title>Leetcode Biweekly Contest 86 writeup</title>

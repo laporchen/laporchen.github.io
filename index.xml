@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Lapor Chen</copyright>
-    <lastBuildDate>Sun, 04 Sep 2022 00:09:17 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Sep 2022 01:05:42 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode Weekly Contest 311 writeup</title>
+      <link>https://laporchen.github.io/posts/leetcode-weekly-contest-311/</link>
+      <pubDate>Mon, 19 Sep 2022 01:05:42 +0800</pubDate>
+      
+      <guid>https://laporchen.github.io/posts/leetcode-weekly-contest-311/</guid>
+      <description>Leetcode Weekly Contest 311 writeup Didn&amp;rsquo;t participate in this one. But tried virtual contest.
+Q1 Smallest Even Multiple Thoughts : Logic Basically asking for LCM(n,2) Solution during contest
+class Solution { public: int smallestEvenMultiple(int n) { return n&amp;amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be.</description>
+    </item>
+    
     <item>
       <title>Leetcode Biweekly Contest 86 writeup</title>
       <link>https://laporchen.github.io/posts/leetcode-biweekly-contest-86/</link>

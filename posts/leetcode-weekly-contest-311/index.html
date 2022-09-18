@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Leetcode Weekly Contest 311 writeup Didn&amp;rsquo;t participate in this one. But tried virtual contest.
+Q1 Smallest Even Multiple Thoughts : Logic Basically asking for LCM(n,2) Solution during contest
+class Solution { public: int smallestEvenMultiple(int n) { return n&amp;amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be." />
+<meta name="keywords" content=", leetcode, solution" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://laporchen.github.io/posts/leetcode-weekly-contest-311/" />
+
+
+    <title>
+        
+            Leetcode Weekly Contest 311 writeup :: Lapor Chen  — Hey.
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.cd525bd0a89ede7290f18b88bee7293e7f3450f6c774573aab039348370f2601.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Leetcode Weekly Contest 311 writeup">
+<meta itemprop="description" content="Leetcode Weekly Contest 311 writeup Didn&rsquo;t participate in this one. But tried virtual contest.
+Q1 Smallest Even Multiple Thoughts : Logic Basically asking for LCM(n,2) Solution during contest
+class Solution { public: int smallestEvenMultiple(int n) { return n&amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be."><meta itemprop="datePublished" content="2022-09-19T01:05:42+08:00" />
+<meta itemprop="dateModified" content="2022-09-19T01:05:42+08:00" />
+<meta itemprop="wordCount" content="504"><meta itemprop="image" content="https://laporchen.github.io/"/>
+<meta itemprop="keywords" content="leetcode,solution," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://laporchen.github.io/"/>
+
+<meta name="twitter:title" content="Leetcode Weekly Contest 311 writeup"/>
+<meta name="twitter:description" content="Leetcode Weekly Contest 311 writeup Didn&rsquo;t participate in this one. But tried virtual contest.
+Q1 Smallest Even Multiple Thoughts : Logic Basically asking for LCM(n,2) Solution during contest
+class Solution { public: int smallestEvenMultiple(int n) { return n&amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be."/>
+
+
+
+
+    <meta property="og:title" content="Leetcode Weekly Contest 311 writeup" />
+<meta property="og:description" content="Leetcode Weekly Contest 311 writeup Didn&rsquo;t participate in this one. But tried virtual contest.
+Q1 Smallest Even Multiple Thoughts : Logic Basically asking for LCM(n,2) Solution during contest
+class Solution { public: int smallestEvenMultiple(int n) { return n&amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://laporchen.github.io/posts/leetcode-weekly-contest-311/" /><meta property="og:image" content="https://laporchen.github.io/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-19T01:05:42+08:00" />
+<meta property="article:modified_time" content="2022-09-19T01:05:42+08:00" /><meta property="og:site_name" content="Lapor Chen" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-09-19 01:05:42 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">% ~</span>
+            <span class="logo__text">Lapor&#39;s Empty Brain</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#C586FF;
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About Me</a></li><li><a href="/posts">Blog</a></li><li><a href="/playlist">Music</a></li><li><a href="https://github.com/laporchen/">Github</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        3 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://laporchen.github.io/posts/leetcode-weekly-contest-311/">Leetcode Weekly Contest 311 writeup</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h1 id="leetcode-weekly-contest-311-writeup">Leetcode Weekly Contest 311 writeup</h1>
+<p>Didn&rsquo;t participate in this one. But tried virtual contest.</p>
+<h2 id="q1-smallest-even-multiplehttpsleetcodecomproblemssmallest-even-multiple"><a href="https://leetcode.com/problems/smallest-even-multiple/">Q1 Smallest Even Multiple</a></h2>
+<p><strong>Thoughts : Logic</strong>
+Basically asking for LCM(n,2)
+<strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int smallestEvenMultiple(int n) {
+        return n&amp;1 ? n * 2 : n;
+    }
+};
+</code></pre><h2 id="q2-length-of-the-longest-alphabetical-continuous-substringhttpsleetcodecomproblemslength-of-the-longest-alphabetical-continuous-substring"><a href="https://leetcode.com/problems/length-of-the-longest-alphabetical-continuous-substring/">Q2 Length of the Longest Alphabetical Continuous Substring</a></h2>
+<p><strong>Thoughts : Greedy</strong>
+We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be. If the current one is not the expecting letter. We change the beginning to this one and continue check the rest of the string. Otherwise, we increase the length and check next letter.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    int longestContinuousSubstring(string s) {
+        int cur = 1;
+        int res = 1;
+
+        for(int i = 1;i&lt;s.size();++i) {
+            if(s[i] == s[i-1] + 1) {
+                ++cur;
+                res = max(res,cur);
+            }
+            else {
+                cur = 1;
+            }
+            if(res == 26) return res;
+        }
+        return res;
+    }
+};
+</code></pre><h2 id="q3-reverse-odd-levels-of-binary-treehttpsleetcodecomproblemsreverse-odd-levels-of-binary-tree"><a href="https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/">Q3 Reverse Odd Levels of Binary Tree</a></h2>
+<p><strong>Thoughts : BFS</strong>
+We want to reverse the odd levels. We keep a number that tracking the current level. If the level is odd. We pop everything out of the queue and reverse the values. The rest of it is just basic BFS.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Solution {
+public:
+    TreeNode* reverseOddLevels(TreeNode* root) {
+        queue&lt;TreeNode*&gt; q;
+        q.push(root);
+        int l = 0;
+        while(!q.empty()) {
+            int n = q.size();
+            if(l &amp; 1) {
+                vector&lt;TreeNode*&gt; v(n);
+                while(n--) {
+                    auto f = q.front();q.pop();
+                    v[n] = f;
+                    if(f-&gt;left) q.push(f-&gt;left);
+                    if(f-&gt;right)q.push(f-&gt;right);
+                }
+                int li = 0,ri = v.size()-1;
+                while(li &lt; ri) {
+                    int tmp = v[li]-&gt;val;
+                    v[li]-&gt;val = v[ri]-&gt;val;
+                    v[ri]-&gt;val = tmp;
+                    ++li;
+                    --ri;
+                }
+            }
+            else {
+                while(n--) {
+                    auto f = q.front();q.pop();
+                    if(f-&gt;left) q.push(f-&gt;left);
+                    if(f-&gt;right) q.push(f-&gt;right);
+                }
+            }
+            ++l;
+        }
+        
+        return root;
+    }
+};
+</code></pre><h2 id="q4-sum-of-prefix-scores-of-stringshttpsleetcodecomproblemssum-of-prefix-scores-of-strings"><a href="https://leetcode.com/problems/sum-of-prefix-scores-of-strings/">Q4 Sum of Prefix Scores of Strings</a></h2>
+<p><strong>Thoughts : Trie</strong>
+For every string, the score of it is the sum of all prefix string include itself. When we insert a word into trie. Add one score for each node in the path. After every word is added. We can calculate the score for each word by add all the score in the search path.</p>
+<p><strong>Solution during contest</strong></p>
+<pre><code class="language-cpp=" data-lang="cpp=">class Node {
+public:
+    Node* next[26];
+    int val = 0;
+    Node() = default;
+};
+class Solution {
+public:
+    Node* root = new Node();
+    void insert(string &amp;s) {
+        int n = s.size();
+        auto cur = root;
+        for(int i = 0;i&lt;n;++i) {
+            int c = s[i] - 'a';
+            if(cur-&gt;next[c] == nullptr) {
+                cur-&gt;next[c] = new Node();
+            }
+            cur-&gt;next[c]-&gt;val++;
+            cur = cur-&gt;next[c];
+        }
+    }
+    int sum(string &amp;s) {
+        int n = s.size();
+        int res = 0;
+        auto cur = root;
+        for(int i = 0;i&lt;n;++i) {
+            int c = s[i] - 'a';
+            res += cur-&gt;next[c]-&gt;val;
+            cur = cur-&gt;next[c];
+        }
+        return res;
+    }
+    vector&lt;int&gt; sumPrefixScores(vector&lt;string&gt;&amp; words) {
+        int n = words.size();
+        unordered_map&lt;string,int&gt; mp;
+        vector&lt;int&gt; res(n,0);
+        for(int i = 0;i&lt;n;++i) {
+            insert(words[i]);
+        }
+        for(int i = 0;i&lt;n;++i) {
+            string &amp;s = words[i];
+            res[i] = sum(s);
+        }
+        return res;
+    }
+};
+</code></pre>
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://laporchen.github.io/tags/leetcode/">leetcode</a></span>
+        <span class="tag"><a href="https://laporchen.github.io/tags/solution/">solution</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        504 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2022-09-19 01:05
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+
+
+
+    </body>
+</html>

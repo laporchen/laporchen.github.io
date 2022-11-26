@@ -15,15 +15,17 @@
             <pubDate>Mon, 19 Sep 2022 01:05:42 +0800</pubDate>
             
             <guid>https://laporchen.github.io/posts/leetcode-weekly-contest-311/</guid>
-            <description>Leetcode Weekly Contest 311 writeup Didn&amp;rsquo;t participate in this one. But tried virtual contest.
-Q1 Smallest Even Multiple Thoughts : Logic Basically asking for LCM(n,2) Solution during contest
-class Solution { public: int smallestEvenMultiple(int n) { return n&amp;amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be.</description>
-            <content type="html"><![CDATA[<h1 id="leetcode-weekly-contest-311-writeup">Leetcode Weekly Contest 311 writeup</h1>
-<p>Didn&rsquo;t participate in this one. But tried virtual contest.</p>
-<h2 id="q1-smallest-even-multiplehttpsleetcodecomproblemssmallest-even-multiple"><a href="https://leetcode.com/problems/smallest-even-multiple/">Q1 Smallest Even Multiple</a></h2>
-<p><strong>Thoughts : Logic</strong>
+            <description>Didn&amp;rsquo;t participate in this one. But tried virtual contest.
+Q1 Smallest Even Multiple Thoughts : Logic
 Basically asking for LCM(n,2)
-<strong>Solution during contest</strong></p>
+Solution during contest
+class Solution { public: int smallestEvenMultiple(int n) { return n&amp;amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy
+We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be.</description>
+            <content type="html"><![CDATA[<p>Didn&rsquo;t participate in this one. But tried virtual contest.</p>
+<h2 id="q1-smallest-even-multiplehttpsleetcodecomproblemssmallest-even-multiple"><a href="https://leetcode.com/problems/smallest-even-multiple/">Q1 Smallest Even Multiple</a></h2>
+<p><strong>Thoughts : Logic</strong></p>
+<p>Basically asking for LCM(n,2)</p>
+<p><strong>Solution during contest</strong></p>
 <pre><code class="language-cpp=" data-lang="cpp=">class Solution {
 public:
     int smallestEvenMultiple(int n) {
@@ -31,8 +33,8 @@ public:
     }
 };
 </code></pre><h2 id="q2-length-of-the-longest-alphabetical-continuous-substringhttpsleetcodecomproblemslength-of-the-longest-alphabetical-continuous-substring"><a href="https://leetcode.com/problems/length-of-the-longest-alphabetical-continuous-substring/">Q2 Length of the Longest Alphabetical Continuous Substring</a></h2>
-<p><strong>Thoughts : Greedy</strong>
-We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be. If the current one is not the expecting letter. We change the beginning to this one and continue check the rest of the string. Otherwise, we increase the length and check next letter.</p>
+<p><strong>Thoughts : Greedy</strong></p>
+<p>We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be. If the current one is not the expecting letter. We change the beginning to this one and continue check the rest of the string. Otherwise, we increase the length and check next letter.</p>
 <p><strong>Solution during contest</strong></p>
 <pre><code class="language-cpp=" data-lang="cpp=">class Solution {
 public:
@@ -54,8 +56,8 @@ public:
     }
 };
 </code></pre><h2 id="q3-reverse-odd-levels-of-binary-treehttpsleetcodecomproblemsreverse-odd-levels-of-binary-tree"><a href="https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/">Q3 Reverse Odd Levels of Binary Tree</a></h2>
-<p><strong>Thoughts : BFS</strong>
-We want to reverse the odd levels. We keep a number that tracking the current level. If the level is odd. We pop everything out of the queue and reverse the values. The rest of it is just basic BFS.</p>
+<p><strong>Thoughts : BFS</strong></p>
+<p>We want to reverse the odd levels. We keep a number that tracking the current level. If the level is odd. We pop everything out of the queue and reverse the values. The rest of it is just basic BFS.</p>
 <p><strong>Solution during contest</strong></p>
 <pre><code class="language-cpp=" data-lang="cpp=">class Solution {
 public:
@@ -96,8 +98,8 @@ public:
     }
 };
 </code></pre><h2 id="q4-sum-of-prefix-scores-of-stringshttpsleetcodecomproblemssum-of-prefix-scores-of-strings"><a href="https://leetcode.com/problems/sum-of-prefix-scores-of-strings/">Q4 Sum of Prefix Scores of Strings</a></h2>
-<p><strong>Thoughts : Trie</strong>
-For every string, the score of it is the sum of all prefix string include itself. When we insert a word into trie. Add one score for each node in the path. After every word is added. We can calculate the score for each word by add all the score in the search path.</p>
+<p><strong>Thoughts : Trie</strong></p>
+<p>For every string, the score of it is the sum of all prefix string include itself. When we insert a word into trie. Add one score for each node in the path. After every word is added. We can calculate the score for each word by add all the score in the search path.</p>
 <p><strong>Solution during contest</strong></p>
 <pre><code class="language-cpp=" data-lang="cpp=">class Node {
 public:

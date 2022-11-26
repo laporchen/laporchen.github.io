@@ -14,9 +14,12 @@
       <pubDate>Mon, 19 Sep 2022 01:05:42 +0800</pubDate>
       
       <guid>https://laporchen.github.io/posts/leetcode-weekly-contest-311/</guid>
-      <description>Leetcode Weekly Contest 311 writeup Didn&amp;rsquo;t participate in this one. But tried virtual contest.
-Q1 Smallest Even Multiple Thoughts : Logic Basically asking for LCM(n,2) Solution during contest
-class Solution { public: int smallestEvenMultiple(int n) { return n&amp;amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be.</description>
+      <description>Didn&amp;rsquo;t participate in this one. But tried virtual contest.
+Q1 Smallest Even Multiple Thoughts : Logic
+Basically asking for LCM(n,2)
+Solution during contest
+class Solution { public: int smallestEvenMultiple(int n) { return n&amp;amp;1 ? n * 2 : n; } }; Q2 Length of the Longest Alphabetical Continuous Substring Thoughts : Greedy
+We want to find the longest alphabetical continuous. So we start from index 0, we check the what should the next alphabet letter should be.</description>
     </item>
     
     <item>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>react on Lapor Chen</title>
+    <link>https://laporchen.github.io/tags/react/</link>
+    <description>Recent content in react on Lapor Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Lapor Chen</copyright>
+    <lastBuildDate>Wed, 11 Jan 2023 12:21:33 +0800</lastBuildDate><atom:link href="https://laporchen.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>useEffect() in React</title>
+      <link>https://laporchen.github.io/posts/useeffectinreact/</link>
+      <pubDate>Wed, 11 Jan 2023 12:21:33 +0800</pubDate>
+      
+      <guid>https://laporchen.github.io/posts/useeffectinreact/</guid>
+      <description>Learning React recently. I&amp;rsquo;m currently developing a typing website, mainly focus on help learning new keyboard layout (although I still didn&amp;rsquo;t implement this feature.)
+I was looking for methods to add event listener to react component. That&amp;rsquo;s when I found out useEffect(). But I just use it the way I found out in someone&amp;rsquo;s code snippet. I did not take a deep look into the details.
+A few days ago. A senior took a look at my code and gave me some advices.</description>
+    </item>
+    
+  </channel>
+</rss>

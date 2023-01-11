@@ -6,8 +6,69 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Lapor Chen</copyright>
-        <lastBuildDate>Mon, 19 Sep 2022 01:05:42 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 11 Jan 2023 12:21:33 +0800</lastBuildDate>
         <atom:link href="https://laporchen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>useEffect() in React</title>
+            <link>https://laporchen.github.io/posts/useeffectinreact/</link>
+            <pubDate>Wed, 11 Jan 2023 12:21:33 +0800</pubDate>
+            
+            <guid>https://laporchen.github.io/posts/useeffectinreact/</guid>
+            <description>Learning React recently. I&amp;rsquo;m currently developing a typing website, mainly focus on help learning new keyboard layout (although I still didn&amp;rsquo;t implement this feature.)
+I was looking for methods to add event listener to react component. That&amp;rsquo;s when I found out useEffect(). But I just use it the way I found out in someone&amp;rsquo;s code snippet. I did not take a deep look into the details.
+A few days ago. A senior took a look at my code and gave me some advices.</description>
+            <content type="html"><![CDATA[<p>Learning React recently. I&rsquo;m currently developing a typing website, mainly focus on help learning new keyboard layout
+(although I still didn&rsquo;t implement this feature.)</p>
+<p>I was looking for methods to add event listener to react component. That&rsquo;s when I found out useEffect(). But I just use it the way I found out in someone&rsquo;s code snippet. I did not take a deep look into the details.</p>
+<p>A few days ago. A senior took a look at my code and gave me some advices. That&rsquo;s when I actually learn more about this function hook.</p>
+<p>There&rsquo;s a second optional variable in useEffect(), which is the dependencies of this hook. By default, if no dependencies was provided. This hook will run after anything updates in the component after initalized.</p>
+<p>You can provided dependencies with a list. useEffect() will only run when the content in dependencies changes.</p>
+<p>Here&rsquo;s an interesting part. If the list is empty. Then it will only run once when the component is created. Now this hook can act as an initalizer.</p>
+<p>Now let&rsquo;s talk about a behavior combined with useState() that&rsquo;s confused me for a while.</p>
+<p>Take a look at the code snippet down below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
+	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;mouseclick&#34;</span>)
+	}
+
+	<span style="color:#a6e22e">useEffect</span>(() =&gt; {
+		window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;mousedown&#34;</span>,<span style="color:#a6e22e">foo</span>)
+		<span style="color:#66d9ef">return</span> () =&gt; {
+			window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#34;mousedown&#34;</span>,<span style="color:#a6e22e">foo</span>)
+		}
+	},[])
+	<span style="color:#66d9ef">return</span> (
+		<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+	)
+}
+</code></pre></div><p>The useEffect will run once and add an event listener for mouse click.
+Whenever the mouse is pressed, we&rsquo;ll see the &ldquo;mouseclick&rdquo; printed in the console.</p>
+<p>But if we change the code to below</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
+	<span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">counter</span>,<span style="color:#a6e22e">setCounter</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>)
+
+	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+		<span style="color:#a6e22e">setCounter</span>(<span style="color:#a6e22e">counter</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+	}
+	<span style="color:#a6e22e">useEffect</span>(() =&gt; {
+		window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;mousedown&#34;</span>,<span style="color:#a6e22e">foo</span>)
+		<span style="color:#66d9ef">return</span> () =&gt; {
+			window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#34;mousedown&#34;</span>,<span style="color:#a6e22e">foo</span>)
+		}
+	},[])
+	<span style="color:#66d9ef">return</span> (
+		<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+			{<span style="color:#a6e22e">counter</span>}
+		<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+	)
+}
+</code></pre></div><p>You will notice that after the counter is added to 1. It won&rsquo;t update anymore.</p>
+<p>After some test and reading the document. The reason that it won&rsquo;t update is that react only renders it once. But the <strong>setCounter</strong> in the foo is the old one. So when user clicks the mouse, the <strong>old</strong> foo is called. The setCounter in the <strong>old</strong> foo treats counter as the old one, thus it just update it from 0 to 1.</p>
+<p>To fix this, we simply add <strong>foo</strong> as a dependency of the hook. Now when the counter is updated. The callback function will run and update the <strong>old</strong> foo to the new one.</p>
+<p>For anyone interested in checking out more about useEffect. You can checkout out their <a href="https://beta.reactjs.org/reference/react/useEffect#useeffect">document</a>.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Leetcode Weekly Contest 311 writeup</title>

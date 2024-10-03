@@ -19,11 +19,11 @@ const exps = [
 </script>
 
 <template>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6 pb-14">
     <template v-for="exp in exps" :key="exp.title">
       <Card class="max-w-full w-max-content h-fit">
         <template #header>
-          <div class="h-64 w-fit overflow-hidden">
+          <div class="h-fit w-fit overflow-hidden">
             <img :src="exp.coverImg" class="h-full w-full object-scale-down object-center rounded-lg border border-black">
           </div>
         </template>

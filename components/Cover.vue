@@ -40,13 +40,18 @@ const myLinks = [
         <img src="@/assets/profile.jpg" alt="profile image" class="object-cover">
       </div>
       <h1 class="font-light text-white text-center text-5xl md:text-6xl"> Lapor Chen </h1>
-      <h3 class="font-thin text-white text-center text-2xl md:text-4xl"> Software Developer </h3>
+      <h3 class="font-thin text-gray-300 text-center text-2xl md:text-4xl"> Software Developer </h3>
       <div class="flex flex-col gap-2 items-center">
         <template v-for="page in pageLinks" :key="page.name">
-          <NuxtLink v-if="disableRoute !== true" as="div" :to="page.link" class="rounded-md bg-white/20 hover:bg-white/80 cursor-pointer w-32 h-10 text-center flex flex-col items-center justify-center">
+          <NuxtLink
+            v-if="disableRoute !== true"
+            as="div"
+            :to="page.link"
+            class="rounded-md bg-white/20 hover:bg-white/80 cursor-pointer w-40 h-12 text-center flex flex-col items-center justify-center"
+          >
             {{ page.name }}
           </NuxtLink>
-          <div v-else class="rounded-md bg-white/20 cursor-default w-32 h-10 text-center flex flex-col items-center justify-center">
+          <div v-else class="rounded-md bg-white/20 cursor-default w-40 h-12 text-center flex flex-col items-center justify-center">
             {{ page.name }}
           </div>
         </template>

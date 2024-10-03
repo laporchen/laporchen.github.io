@@ -31,12 +31,12 @@ const projects = [
 </script>
 
 <template>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6 pb-14">
     <template v-for="project in projects" :key="project.title">
       <Card class="max-w-full w-max-content h-fit">
         <template #header>
-          <div class="max-h-64 h-fit w-fit rounded-lg border border-black overflow-hidden">
-            <img :src="project.coverImg" class="h-full w-full object-scale-down object-center">
+          <div class="h-fit w-fit overflow-hidden">
+            <img :src="project.coverImg" class="max-h-full w-full object-scale-down object-center rounded-lg border border-black">
           </div>
         </template>
         <template #body>

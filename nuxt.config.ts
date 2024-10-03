@@ -14,4 +14,8 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+
+  app: {
+    pageTransition: { name: 'page', mode: 'in-out' },
+  },
 })

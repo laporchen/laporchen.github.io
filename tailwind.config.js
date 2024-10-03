@@ -17,6 +17,9 @@ export default {
           950: '#06050B',
         },
       },
+      spacing: {
+        'max-content': 'min(90dvw,40rem)',
+      },
     },
   },
 }

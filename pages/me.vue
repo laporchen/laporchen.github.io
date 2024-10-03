@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-5">
     <h1 class="text-3xl font-light">
-      Hello! I'm Lapor Chen
+      Hello! I'm Lapor Chen (Wei-Cheng Chen)
     </h1>
     <p class="text-lg md:text-xl font-thin">
       I'm software developer with a Bachelor’s degree in Computer Science from <span class="font-light"> National Taiwan Normal University </span>.

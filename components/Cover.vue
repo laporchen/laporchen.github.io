@@ -15,6 +15,11 @@ const pageLinks = [
     name: 'Projects',
     link: '/projects',
   },
+  {
+    name: 'Resume',
+    link: '/resume.pdf',
+    target: '_blank',
+  }
 ]
 
 const myLinks = [
@@ -47,6 +52,7 @@ const myLinks = [
             v-if="disableRoute !== true"
             as="div"
             :to="page.link"
+            :target="page.target"
             class="rounded-md bg-white/20 hover:bg-white/80 cursor-pointer w-40 h-12 text-center flex flex-col items-center justify-center"
           >
             {{ page.name }}
